@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_gdchoi1016/NIA_SL_WORD0504_SYN01_F.mp4",
+        "name": "NIA_SL_WORD0504_SYN01_F.mp4",
+        "duration": 2.233,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.52,
+            "end": 2.016,
+            "attributes": [
+                {
+                    "name": "의미"
+                }
+            ]
+        }
+    ]
+}

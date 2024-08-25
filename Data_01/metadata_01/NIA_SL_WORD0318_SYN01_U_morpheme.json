@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1020/NIA_SL_WORD0318_SYN01_U.mp4",
+        "name": "NIA_SL_WORD0318_SYN01_U.mp4",
+        "duration": 2.133,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.381,
+            "end": 1.683,
+            "attributes": [
+                {
+                    "name": "남부지방"
+                }
+            ]
+        }
+    ]
+}

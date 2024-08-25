@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1013/NIA_SL_WORD0240_SYN01_D.mp4",
+        "name": "NIA_SL_WORD0240_SYN01_D.mp4",
+        "duration": 2.633,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.516,
+            "end": 2.198,
+            "attributes": [
+                {
+                    "name": "학식"
+                }
+            ]
+        }
+    ]
+}

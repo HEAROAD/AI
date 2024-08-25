@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_gdchoi1011/NIA_SL_WORD0438_SYN01_L.mp4",
+        "name": "NIA_SL_WORD0438_SYN01_L.mp4",
+        "duration": 2.767,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.323,
+            "end": 2.595,
+            "attributes": [
+                {
+                    "name": "금욕"
+                }
+            ]
+        }
+    ]
+}

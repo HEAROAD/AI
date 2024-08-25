@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_bkyu1019/NIA_SL_WORD0097_SYN01_R.mp4",
+        "name": "NIA_SL_WORD0097_SYN01_R.mp4",
+        "duration": 2.667,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.474,
+            "end": 2.458,
+            "attributes": [
+                {
+                    "name": "소불고기"
+                }
+            ]
+        }
+    ]
+}

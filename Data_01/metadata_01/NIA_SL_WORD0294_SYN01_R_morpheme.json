@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1017/NIA_SL_WORD0294_SYN01_R.mp4",
+        "name": "NIA_SL_WORD0294_SYN01_R.mp4",
+        "duration": 2.433,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.516,
+            "end": 2.04,
+            "attributes": [
+                {
+                    "name": "까마귀"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1030/NIA_SL_WORD0430_SYN01_F.mp4",
+        "name": "NIA_SL_WORD0430_SYN01_F.mp4",
+        "duration": 2.767,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.514,
+            "end": 2.36,
+            "attributes": [
+                {
+                    "name": "귀부인"
+                }
+            ]
+        }
+    ]
+}

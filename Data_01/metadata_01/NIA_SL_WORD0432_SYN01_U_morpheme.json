@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1030/NIA_SL_WORD0432_SYN01_U.mp4",
+        "name": "NIA_SL_WORD0432_SYN01_U.mp4",
+        "duration": 2.533,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.473,
+            "end": 1.725,
+            "attributes": [
+                {
+                    "name": "모범"
+                }
+            ]
+        }
+    ]
+}

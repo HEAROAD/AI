@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_bkyu1016/NIA_SL_WORD0066_SYN01_L.mp4",
+        "name": "NIA_SL_WORD0066_SYN01_L.mp4",
+        "duration": 2.1,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.477,
+            "end": 1.732,
+            "attributes": [
+                {
+                    "name": "친아들"
+                }
+            ]
+        }
+    ]
+}

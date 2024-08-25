@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_bkyu1025/NIA_SL_WORD0160_SYN01_L.mp4",
+        "name": "NIA_SL_WORD0160_SYN01_L.mp4",
+        "duration": 3.133,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.583,
+            "end": 2.348,
+            "attributes": [
+                {
+                    "name": "강요"
+                }
+            ]
+        }
+    ]
+}

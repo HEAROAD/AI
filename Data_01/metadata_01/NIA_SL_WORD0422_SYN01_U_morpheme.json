@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1029/NIA_SL_WORD0422_SYN01_U.mp4",
+        "name": "NIA_SL_WORD0422_SYN01_U.mp4",
+        "duration": 2.833,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.709,
+            "end": 2.405,
+            "attributes": [
+                {
+                    "name": "국그릇"
+                }
+            ]
+        }
+    ]
+}

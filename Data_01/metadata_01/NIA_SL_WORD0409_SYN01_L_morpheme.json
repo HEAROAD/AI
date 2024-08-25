@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1028/NIA_SL_WORD0409_SYN01_L.mp4",
+        "name": "NIA_SL_WORD0409_SYN01_L.mp4",
+        "duration": 2.333,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.445,
+            "end": 1.926,
+            "attributes": [
+                {
+                    "name": "교명"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_emyou1011/NIA_SL_WORD0225_SYN01_F.mp4",
+        "name": "NIA_SL_WORD0225_SYN01_F.mp4",
+        "duration": 2.9,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.439,
+            "end": 2.473,
+            "attributes": [
+                {
+                    "name": "상장"
+                }
+            ]
+        }
+    ]
+}

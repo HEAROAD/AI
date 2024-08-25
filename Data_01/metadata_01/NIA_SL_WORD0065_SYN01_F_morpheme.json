@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_bkyu1016/NIA_SL_WORD0065_SYN01_F.mp4",
+        "name": "NIA_SL_WORD0065_SYN01_F.mp4",
+        "duration": 3.333,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.65,
+            "end": 3.15,
+            "attributes": [
+                {
+                    "name": "치료법"
+                }
+            ]
+        }
+    ]
+}

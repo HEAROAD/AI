@@ -1,0 +1,19 @@
+{
+    "metaData": {
+        "url": "https://blackolivevideo.blob.core.windows.net/sign-language/1123_bkyu1029/NIA_SL_WORD0209_SYN01_U.mp4",
+        "name": "NIA_SL_WORD0209_SYN01_U.mp4",
+        "duration": 2.567,
+        "exportedOn": "2020/12/10"
+    },
+    "data": [
+        {
+            "start": 0.653,
+            "end": 2.323,
+            "attributes": [
+                {
+                    "name": "경찰청장"
+                }
+            ]
+        }
+    ]
+}
