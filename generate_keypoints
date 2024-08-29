@@ -1,0 +1,100 @@
+import cv2
+import mediapipe as mp
+import json
+import os
+
+# MediaPipe 포즈와 손 모델 초기화
+mp_pose = mp.solutions.pose
+mp_hands = mp.solutions.hands
+pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+hands = mp_hands.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+
+# 단어와 파일 이름을 지정할 변수
+word = "YOUR_WORD"  # 실제 사용할 단어로 교체하세요
+output_dir = "output_json"  # JSON 파일을 저장할 디렉터리
+os.makedirs(output_dir, exist_ok=True)
+
+# 카메라에서 영상 캡처 초기화
+cap = cv2.VideoCapture(0)  # 0은 기본 카메라
+
+# 전체 데이터를 저장할 리스트
+all_keypoints_data = {
+    "word": word,
+    "keypoints": []
+}
+
+frame_idx = 0
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break
+
+    # 이미지 크기 저장
+    image_height, image_width, _ = frame.shape
+
+    # BGR 이미지를 RGB로 변환
+    image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    image.flags.writeable = False  # 이미지를 쓰기 불가능 상태로 설정
+
+    # 포즈와 손 감지 수행
+    pose_results = pose.process(image)
+    hands_results = hands.process(image)
+
+    image.flags.writeable = True  # 다시 이미지를 쓰기 가능 상태로 설정
+
+    # 현재 프레임의 데이터 준비
+    frame_keypoints_data = {
+        "file": f"KSL_consonant01_F_0000{frame_idx}_keypoints.json",
+        "pose_keypoints_3d": [],
+        "hand_left_keypoints_3d": [],
+        "hand_right_keypoints_3d": []
+    }
+
+    # 포즈 랜드마크 처리 및 역정규화
+    if pose_results.pose_landmarks:
+        for landmark in pose_results.pose_landmarks.landmark:
+            x_pixel = landmark.x * image_width
+            y_pixel = landmark.y * image_height
+            z_value = landmark.z * image_width
+            frame_keypoints_data["pose_keypoints_3d"].extend([
+                x_pixel, y_pixel, z_value, landmark.visibility
+            ])
+        mp.solutions.drawing_utils.draw_landmarks(
+            frame, pose_results.pose_landmarks, mp_pose.POSE_CONNECTIONS
+        )
+
+    # 손 랜드마크 처리 및 역정규화
+    if hands_results.multi_hand_landmarks:
+        for hand_idx, hand_landmarks in enumerate(hands_results.multi_hand_landmarks):
+            hand_type = hands_results.multi_handedness[hand_idx].classification[0].label
+            for landmark in hand_landmarks.landmark:
+                x_pixel = landmark.x * image_width
+                y_pixel = landmark.y * image_height
+                z_value = landmark.z * image_width
+                keypoint = [x_pixel, y_pixel, z_value, 1.0]  # visibility는 1.0으로 가정
+                if hand_type == 'Left':
+                    frame_keypoints_data["hand_left_keypoints_3d"].extend(keypoint)
+                else:
+                    frame_keypoints_data["hand_right_keypoints_3d"].extend(keypoint)
+            mp.solutions.drawing_utils.draw_landmarks(
+                frame, hand_landmarks, mp_hands.HAND_CONNECTIONS
+            )
+
+    # 현재 프레임의 데이터를 전체 데이터에 추가
+    all_keypoints_data["keypoints"].append(frame_keypoints_data)
+
+    # 다음 프레임으로
+    frame_idx += 1
+
+ 
+    cv2.imshow('Pose and Hands Detection', frame)
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+        break
+
+# JSON 파일로 저장
+json_file_path = os.path.join(output_dir, f"{word}_keypoints.json")
+with open(json_file_path, 'w', encoding='utf-8') as json_file:
+    json.dump(all_keypoints_data, json_file, ensure_ascii=False, indent=4)
+
+cap.release()
+cv2.destroyAllWindows()
