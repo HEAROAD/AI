@@ -1,10 +1,24 @@
+from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.responses import JSONResponse
 import librosa
-import sys
-import json
 import numpy as np
+import json
+import uvicorn
 
-def analyze_voice(file_path):
-    y, sr = librosa.load(file_path)
+app = FastAPI()
+
+@app.post("/analyze-voice/")
+async def analyze_voice(file: UploadFile = File(...)):
+    if file.content_type != "audio/wav":
+        raise HTTPException(status_code=400, detail="Invalid file type. Please upload a WAV file.")
+
+    # Save the uploaded file to a temporary location
+    file_location = f"/tmp/{file.filename}"
+    with open(file_location, "wb") as f:
+        f.write(file.file.read())
+
+    # Load the audio file
+    y, sr = librosa.load(file_location, sr=None)
 
     # 주파수 기반 분석
     f0, _, _ = librosa.pyin(y, fmin=librosa.note_to_hz('C2'), fmax=librosa.note_to_hz('C7'))
@@ -49,8 +63,7 @@ def analyze_voice(file_path):
         "character": character
     }
 
-    return json.dumps(result)
+    return JSONResponse(content=result)
 
 if __name__ == "__main__":
-    file_path = sys.argv[1]
-    print(analyze_voice(file_path))
+    uvicorn.run(app, host="0.0.0.0", port=8000)
