@@ -1,5 +1,9 @@
-fastapi==0.95.2
-pydantic==1.10.2
-openai==0.27.2
-python-dotenv==1.0.0
-uvicorn==0.22.0
+pydantic
+openai
+python-dotenv
+uvicorn
+fastapi
+uvicorn
+tensorflow
+mediapipe
+opencv-python
