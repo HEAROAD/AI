@@ -7,6 +7,43 @@ import audioread
 
 app = FastAPI()
 
+import random
+
+@app.get("/random-voice-analysis/")
+async def random_voice_analysis():
+    # 랜덤 값 생성
+    frequency_category = random.choice(["저음", "중음", "고음"])
+    pitch_category = random.choice(["높음", "중간", "낮음"])
+    speed_category = random.choice(["빠름", "보통", "느림"])
+    volume_category = random.choice(["높음", "보통", "낮음"])
+    spectral_category = random.choice(["밝은 목소리", "동굴 목소리"])
+    
+    # 캐릭터 결정
+    if pitch_category == "높음" and speed_category == "빠름" and spectral_category == "밝은 목소리":
+        character = "귀여운 다람쥐"
+    elif pitch_category == "중간" and volume_category == "보통" and spectral_category == "밝은 목소리":
+        character = "명랑한 새"
+    elif pitch_category == "낮음" and volume_category == "낮음" and spectral_category == "동굴 목소리":
+        character = "고요한 곰"
+    elif frequency_category == "저음" and spectral_category == "동굴 목소리":
+        character = "중후한 사자"
+    elif pitch_category == "낮음" and speed_category == "보통" and spectral_category == "동굴 목소리":
+        character = "개구리"
+    else:
+        character = "평범한 고양이"
+
+    result = {
+        "frequencyCategory": frequency_category,
+        "pitchCategory": pitch_category,
+        "speedCategory": speed_category,
+        "volumeCategory": volume_category,
+        "spectralCategory": spectral_category,
+        "character": character
+    }
+
+    return JSONResponse(content=result)
+
+
 @app.post("/analyze-voice/")
 async def analyze_voice(file: UploadFile = File(...)):
     print(f"Received file: {file.filename}, Content Type: {file.content_type}")
