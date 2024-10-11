@@ -1,9 +1,10 @@
-pydantic
-openai
-python-dotenv
-uvicorn
 fastapi
 uvicorn
-tensorflow
-mediapipe
+librosa
+numpy
 opencv-python
+audioread
+mediapipe
+tensorflow
+python-dotenv
+openai
